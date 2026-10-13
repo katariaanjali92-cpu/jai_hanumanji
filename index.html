@@ -65,16 +65,11 @@
     }
 
     .hanuman {
-      display: inline-grid;
-      width: 116px;
-      height: 116px;
-      place-items: center;
+      display: block;
+      width: 150px;
+      height: 150px;
       margin-bottom: 24px;
-      border: 1px solid rgb(255 255 255 / 75%);
-      border-radius: 50%;
-      background: linear-gradient(145deg, #ffd37f, #f28c32);
-      box-shadow: 0 12px 32px rgb(150 67 22 / 20%), inset 0 0 0 7px rgb(255 255 255 / 22%);
-      font-size: 62px;
+      overflow: visible;
       animation: float 4s ease-in-out infinite;
     }
 
@@ -189,7 +184,39 @@
     <span class="sparkle sparkle-three" aria-hidden="true">✦</span>
 
     <p class="eyebrow">॥ श्री हनुमते नमः ॥</p>
-    <div class="hanuman" role="img" aria-label="हनुमान जी">🙏</div>
+    <svg class="hanuman" viewBox="0 0 160 160" role="img" aria-labelledby="hanuman-title">
+      <title id="hanuman-title">हनुमान जी का चित्र</title>
+      <defs>
+        <linearGradient id="aura" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffe3a5"/>
+          <stop offset="1" stop-color="#f28c32"/>
+        </linearGradient>
+        <linearGradient id="crown" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffe28b"/>
+          <stop offset="1" stop-color="#d98216"/>
+        </linearGradient>
+      </defs>
+      <circle cx="80" cy="80" r="76" fill="url(#aura)"/>
+      <circle cx="80" cy="80" r="69" fill="none" stroke="#fff5d9" stroke-width="2" opacity=".8"/>
+      <path d="M119 110c22-10 31 5 20 19-5 6-13 7-19 3" fill="none" stroke="#a94a19" stroke-width="5" stroke-linecap="round"/>
+      <path d="M131 91v34" stroke="#71371e" stroke-width="5" stroke-linecap="round"/>
+      <path d="M124 93c0-8 14-8 14 0l-2 5h-10z" fill="#e6a52d" stroke="#71371e" stroke-width="2"/>
+      <path d="M127 127h9l4 7h-17z" fill="#e6a52d" stroke="#71371e" stroke-width="2"/>
+      <path d="M43 137c3-22 16-32 37-32s34 10 37 32" fill="#bd4d20" stroke="#71371e" stroke-width="3"/>
+      <path d="M59 115l21 16 21-16" fill="none" stroke="#f6cf68" stroke-width="4"/>
+      <path d="M62 43 55 19l18 12 7-20 8 20 18-12-7 25" fill="url(#crown)" stroke="#71371e" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="80" cy="17" r="5" fill="#c84321"/>
+      <path d="M49 54c-12-7-18 4-13 16 3 7 9 9 15 7m58-23c12-7 18 4 13 16-3 7-9 9-15 7" fill="#f4bd83" stroke="#71371e" stroke-width="3"/>
+      <path d="M53 48c8-11 46-11 54 0l5 35c1 21-13 35-32 35S47 104 48 83z" fill="#f4bd83" stroke="#71371e" stroke-width="3"/>
+      <path d="M70 71c4-3 8-3 12 0m8 0c4-3 8-3 12 0" fill="none" stroke="#71371e" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="72" cy="78" rx="3" ry="4" fill="#3b2419"/>
+      <ellipse cx="96" cy="78" rx="3" ry="4" fill="#3b2419"/>
+      <path d="M84 80l-5 13 8 2" fill="none" stroke="#a94a19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="85" cy="101" rx="16" ry="10" fill="#ffe0b5" stroke="#71371e" stroke-width="2"/>
+      <path d="M78 102h14" stroke="#71371e" stroke-width="2" stroke-linecap="round"/>
+      <path d="M83 54v13m0-7h6" stroke="#c5291e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M69 112c7 5 17 5 24 0" fill="none" stroke="#e6a52d" stroke-width="4" stroke-linecap="round"/>
+    </svg>
     <h1>राम राम</h1>
     <p class="message">हनुमान जी की ओर से आपको प्रेम भरा अभिवादन</p>
     <div class="divider" aria-hidden="true">ॐ</div>
