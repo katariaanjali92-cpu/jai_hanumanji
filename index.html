@@ -23,7 +23,7 @@
       margin: 0;
       display: grid;
       place-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
       background:
         radial-gradient(ellipse at 50% 42%, #fffdf7 0, #fff5e4 48%, #f9dfbd 100%);
     }
@@ -31,7 +31,8 @@
     .page {
       position: relative;
       width: min(100% - 32px, 720px);
-      padding: 64px 28px 52px;
+      margin: auto;
+      padding: 54px 28px 36px;
       text-align: center;
       isolation: isolate;
     }
@@ -125,6 +126,142 @@
       font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.08em;
+    }
+
+    .guide {
+      margin: 38px auto 0;
+      padding: 24px;
+      border: 1px solid rgb(194 125 59 / 32%);
+      border-radius: 22px;
+      background: rgb(255 255 255 / 72%);
+      box-shadow: 0 12px 36px rgb(116 60 23 / 9%);
+      text-align: left;
+    }
+
+    .guide-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .guide h2 {
+      margin: 0;
+      color: #873719;
+      font-size: 21px;
+    }
+
+    .guide-label {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #fff0d9;
+      color: #98511f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .guide-intro,
+    .guide-note {
+      margin: 8px 0 16px;
+      color: #76513a;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .moods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .mood,
+    .inspire-button,
+    .share-button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .mood {
+      padding: 8px 13px;
+      border: 1px solid #e6c59c;
+      border-radius: 999px;
+      background: #fffaf2;
+      color: #744126;
+    }
+
+    .mood[aria-pressed="true"] {
+      border-color: #ae4c20;
+      background: #fff0df;
+      color: #8e3217;
+      font-weight: 700;
+    }
+
+    .inspire-button,
+    .share-button {
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .inspire-button {
+      margin-top: 16px;
+      background: #9b3218;
+      color: #fffaf2;
+    }
+
+    .inspire-button:hover {
+      background: #7c2815;
+    }
+
+    .reflection {
+      min-height: 76px;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 3px solid #d8994e;
+      border-radius: 0 12px 12px 0;
+      background: #fff8ed;
+    }
+
+    .reflection p {
+      margin: 0;
+      color: #63351e;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .reflection .reflection-source {
+      margin-top: 6px;
+      color: #9a6336;
+      font-size: 12px;
+    }
+
+    .guide-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .share-button {
+      border: 1px solid #e6c59c;
+      background: #fffaf2;
+      color: #744126;
+    }
+
+    .guide-note {
+      margin: 14px 0 0;
+      font-size: 12px;
+    }
+
+    .status {
+      min-height: 1.5em;
+      margin: 10px 0 0;
+      color: #73371f;
+      font-size: 13px;
     }
 
     .sparkle {
@@ -222,6 +359,88 @@
     <div class="divider" aria-hidden="true">ॐ</div>
     <p class="blessing">बजरंगबली आपकी हर राह को शक्ति, साहस<br>और मंगल से भर दें।</p>
     <div class="chant">जय श्री राम · जय हनुमान</div>
+
+    <section class="guide" aria-labelledby="guide-title">
+      <div class="guide-heading">
+        <h2 id="guide-title">आपकी भक्ति प्रेरणा</h2>
+        <span class="guide-label">AI-प्रेरित अनुभव</span>
+      </div>
+      <p class="guide-intro">आज आप किस भाव के साथ आगे बढ़ना चाहते हैं?</p>
+      <div class="moods" role="group" aria-label="अपना भाव चुनें">
+        <button class="mood" type="button" data-mood="courage" aria-pressed="true">💪 साहस</button>
+        <button class="mood" type="button" data-mood="peace" aria-pressed="false">🪷 शांति</button>
+        <button class="mood" type="button" data-mood="focus" aria-pressed="false">🎯 एकाग्रता</button>
+      </div>
+      <button class="inspire-button" type="button">मेरे लिए प्रेरणा पाएँ</button>
+      <div class="reflection" aria-live="polite" aria-atomic="true">
+        <p id="reflection-text">हनुमान जी के साहस को याद करें—एक छोटा-सा दृढ़ कदम भी बड़ी राह की शुरुआत है।</p>
+        <p class="reflection-source">हनुमान जी की भक्ति से प्रेरित संदेश</p>
+      </div>
+      <div class="guide-actions">
+        <button class="share-button" type="button">संदेश साझा करें</button>
+      </div>
+      <p class="guide-note">यह भक्ति-प्रेरित सुविधा आपके चुने हुए भाव के अनुसार संदेश दिखाती है।</p>
+      <p class="status" role="status" aria-live="polite"></p>
+    </section>
   </main>
+  <script>
+    const messages = {
+      courage: [
+        "हनुमान जी के साहस को याद करें—एक छोटा-सा दृढ़ कदम भी बड़ी राह की शुरुआत है।",
+        "बजरंगबली की निष्ठा से प्रेरणा लें: विश्वास रखिए और अपने अगले सही कदम पर ध्यान दीजिए।",
+        "मन में साहस जगाइए—धैर्य और सच्चे प्रयास से कठिन राह भी पार हो सकती है।"
+      ],
+      peace: [
+        "एक पल ठहरकर गहरी साँस लें। राम नाम का स्मरण मन को शांति और स्थिरता दे।",
+        "हनुमान जी की भक्ति से प्रेरित होकर चिंता छोड़ें और आज के इस पल में मन टिकाएँ।",
+        "शांत मन से आगे बढ़ें—हर दिन अपने साथ एक नई शुरुआत लेकर आता है।"
+      ],
+      focus: [
+        "अपने लक्ष्य को याद करें और अभी बस अगला छोटा काम पूरा करने पर ध्यान दें।",
+        "हनुमान जी की एकाग्रता से प्रेरित हों—निष्ठा से किया गया छोटा प्रयास भी मायने रखता है।",
+        "मन को एक दिशा दें: साँस लें, अपना काम चुनें, और धैर्य से शुरुआत करें।"
+      ]
+    };
+
+    const moodButtons = document.querySelectorAll(".mood");
+    const reflectionText = document.querySelector("#reflection-text");
+    const status = document.querySelector(".status");
+    let selectedMood = "courage";
+
+    moodButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedMood = button.dataset.mood;
+        moodButtons.forEach((moodButton) => {
+          moodButton.setAttribute("aria-pressed", String(moodButton === button));
+        });
+        status.textContent = "";
+      });
+    });
+
+    document.querySelector(".inspire-button").addEventListener("click", () => {
+      const choices = messages[selectedMood];
+      const currentMessage = reflectionText.textContent;
+      const alternatives = choices.filter((message) => message !== currentMessage);
+      reflectionText.textContent = alternatives[Math.floor(Math.random() * alternatives.length)];
+      status.textContent = "आपके लिए एक नई प्रेरणा।";
+    });
+
+    document.querySelector(".share-button").addEventListener("click", async () => {
+      const text = `${reflectionText.textContent} — जय श्री राम · जय हनुमान`;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: "भक्ति प्रेरणा", text });
+        } else if (navigator.clipboard) {
+          await navigator.clipboard.writeText(text);
+          status.textContent = "संदेश कॉपी हो गया—अब आप इसे साझा कर सकते हैं।";
+        } else {
+          status.textContent = "इस ब्राउज़र में साझा करने की सुविधा उपलब्ध नहीं है।";
+        }
+      } catch (error) {
+        if (error.name === "AbortError") return;
+        status.textContent = "संदेश साझा नहीं हो सका। कृपया फिर से कोशिश करें।";
+      }
+    });
+  </script>
 </body>
 </html>
